@@ -16,7 +16,7 @@ default: &default
 development:
   <<: *default
   #database: db/development.sqlite3
-  database: macros_db_development
+  database: relay_v2_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
