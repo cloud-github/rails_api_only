@@ -6,8 +6,8 @@ module Api
       before_action :set_macro, only: %i[update]
 
       def index
-        @macros = Macro.includes(:macro_category).before(with_cursor).limit(per_page)
-        render json: ::V1::MacroSerializer.new(@macros, index_options).serializable_hash
+        @macros = Macro.all
+        render json: ::V1::MacroSerializer.new(@macros).serializable_hash
       end
 
       def create
@@ -56,10 +56,6 @@ module Api
         ).tap do |p|
           p[:body] = nil if p[:macro_type] == 'sms'
         end
-      end
-
-      def index_options
-        options.merge!(meta: { cursor: @macros.cursor_before })
       end
     end
   end
