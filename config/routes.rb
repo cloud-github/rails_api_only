@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       end
 
       resources :macro_categories
-
+      resources :macros do
+        collection do
+          delete :destroy
+        end
+      end
     end
   end
 end
