@@ -47,6 +47,7 @@ module Api
       end
 
       def macro_params
+
         params.require(:macro).permit(
           :name,
           :body,

@@ -9,5 +9,6 @@
 #
 
 class MacroCategory < ActiveRecord::Base
+
   has_one :macro
 end
