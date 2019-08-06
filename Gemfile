@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.3'
 #gem 'sqlite3'
 gem 'pg'
 
+gem 'rack-cors'
+
 gem 'fast_jsonapi'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
