@@ -6,7 +6,7 @@ module Api
       before_action :set_macro, only: %i[update]
 
       def index
-        @macros = Macro.all
+        @macros = Macro.includes(:macro_category).all
         render json: ::V1::MacroSerializer.new(@macros).serializable_hash
       end
 
