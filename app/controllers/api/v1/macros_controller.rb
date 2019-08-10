@@ -6,7 +6,7 @@ module Api
       before_action :set_macro, only: %i[update]
 
       def index
-        @macros = Macro.includes(:macro_category).all
+        @macros = Macro.includes(:macro_category)
         render json: ::V1::MacroSerializer.new(@macros).serializable_hash
       end
 
@@ -28,8 +28,8 @@ module Api
       end
 
       def destroy
-        Macro.where(id: params[:ids]).destroy_all
-        render json: { success: true, response: 'Removed Successfully' }
+        @deleted = Macro.where(id: params[:ids]).destroy_all
+        render json: { success: true, response: @deleted }
       rescue StandardError => e
         render json: { success: false, response: e }, status: :unprocessable_entity
       end
