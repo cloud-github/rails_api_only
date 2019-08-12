@@ -4,10 +4,11 @@ module Api
   module V1
     class MacroCategoriesController < BaseController
       def index
-        if params[:type] == 'like_name'
-          data = MacroCategory.find('name LIKE ?', "%#{params[:query]}%")
+        if params[:type] == 'get_name'
+          data = MacroCategory.find(params[:query])
+        elsif params[:type] == 'like_name'
+          data = MacroCategory.where('name LIKE ?', "%#{params[:query]}%")
         else
-          @macro_categories = MacroCategory.all
           data = ::V1::MacroCategorySerializer.new(@macro_categories).serializable_hash
         end
         render json: data
