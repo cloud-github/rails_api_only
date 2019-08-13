@@ -1,6 +1,6 @@
 # README
 
-CRUD (Create, Read, Update, Delete) API built with Ruby on Rails.
+Simple CRUD (Create, Read, Update, Delete) API built with Ruby on Rails.
 
 Heroku demo url (Backend):  https://rails-api-only.herokuapp.com/v1/macros
 
@@ -31,9 +31,22 @@ bundle install
 Open config/database.yml file.
 
 Edit with your database name and credentials
-username: your_username
-password: your_password
-database: your_database_name
+
+```CLI
+default: &default
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: unicode
+  username: your_username
+  password: your_password
+  host: localhost
+  timeout: 5000
+
+development:
+  <<: *default
+  #database: db/development.sqlite3
+  database: your_database_name
+```
 
 ## Database migration
 

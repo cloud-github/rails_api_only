@@ -11,6 +11,7 @@ module Api
         else
           data = ::V1::MacroCategorySerializer.new(@macro_categories).serializable_hash
         end
+
         render json: data
       end
 
