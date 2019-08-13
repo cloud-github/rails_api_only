@@ -8,15 +8,15 @@ default: &default
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   encoding: unicode
-  username: relayuser
-  password: A1V3S22
+  username: your_username
+  password: your_password
   host: localhost
   timeout: 5000
 
 development:
   <<: *default
   #database: db/development.sqlite3
-  database: relay_v2_dev
+  database: your_database_name
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,9 +24,9 @@ development:
 test:
   <<: *default
   #database: db/test.sqlite3
-  database: macros_db_test
+  database: your_database_name_test
 
 production:
   <<: *default
   #database: db/production.sqlite3
-  database: macros_db_production
+  database: your_database_name_production

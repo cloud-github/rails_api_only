@@ -1,24 +1,53 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+CRUD (Create, Read, Update, Delete) API built with Ruby on Rails.
 
-Things you may want to cover:
+Heroku demo url (Backend):  https://rails-api-only.herokuapp.com/v1/macros
 
-* Ruby version
+Firebase demo url (Frontend): https://reactjs-rails-crud-app.firebaseapp.com/
 
-* System dependencies
+## Ruby version
+ruby 2.6.1p33
 
-* Configuration
+## Rails version
+Rails 5.2.3 
 
-* Database creation
 
-* Database initialization
+# INSTALLATION GUIDE
 
-* How to run the test suite
+## Clone Project 
 
-* Services (job queues, cache servers, search engines, etc.)
+```CLI
+git clone https://github.com/cloud-github/rails_api_only.git
+```
 
-* Deployment instructions
+## Bundle install
 
-* ...
+```CLI
+bundle install
+```
+
+## Database creation
+Open config/database.yml file.
+
+Edit with your database name and credentials
+username: your_username
+password: your_password
+database: your_database_name
+
+## Database migration
+
+```CLI
+rails db:migrate
+```
+
+## Run Server
+```CLI
+rails s -p 3001        # If you like to run in port 3001. You can change this.
+```
+
+That's all.
+You configured rails server successfully. 
+
+
+## Deployment
